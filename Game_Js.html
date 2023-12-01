@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Answer the question</title>
+    <style>
+        *{
+            margin: 10px ;
+            padding: 0 ;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100px;
+            padding: 20px;
+            font-size: 1.5em;
+            position: relative;
+            background-color: rgb(140, 215, 240);
+            border : solid 1px gray ;
+            border-radius: 10px;
+            font-family: 'Times New roman';
+            cursor: grab;
+
+        }
+        button:hover{
+            transform: scale(1.1);
+            color: rgb(255, 0, 0);
+            transition: .2s;
+        }
+        .box{
+            width: 300px;
+            margin: 0 auto;
+        }
+        .tit{
+            font-family: 'Times New roman',serif;
+            font-variant: small-caps;
+            color: rgb(255, 0, 0);
+        }
+     .signature{
+        font-style: italic;
+        font-weight: 500;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+     }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 class="tit">Are you Angry ? </h1>
+        <button id="yes" onclick="yesFunc()">Yes</button>
+        <button id="no" onmouseover="noFunc()">No</button>
+        <span class="signature">Made By KH-KHAID</span>
+    </div>
+
+    <script>
+        
+        let count = 0;
+        function yesFunc() {
+            let h1 = document.createElement('h1');
+            h1.appendChild(document.createTextNode("I know it !"));
+            h1.style.color='red';
+            h1.style.textAlign='center' ;
+            document.body.append(h1);
+            
+
+        }
+
+        function noFunc() {
+          
+            let nobtn = document.getElementById('no');
+            let width = window.innerWidth;
+            let height = window.innerHeight ;
+            console.log(nobtn.offsetWidth)
+            let left = Math.ceil(Math.random() * 550 ) - 250 ; 
+            let top = Math.round(Math.random() * 350 )
+            nobtn.style.left = left + 'px';
+            nobtn.style.top = top + 'px';
+            
+        }
+
+    </script>
+</body>
+
+</html>
